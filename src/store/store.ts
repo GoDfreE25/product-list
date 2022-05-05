@@ -1,4 +1,5 @@
-import { createStore, Reducer, Store } from 'redux';
+import { createStore, Reducer, Store, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import { Actions, ActionType, State } from './types';
 
 const initialState: State = {
@@ -19,4 +20,4 @@ const reducer: Reducer<State, Actions> = (
   }
 };
 
-export const store: Store<State, Actions> = createStore(reducer);
+export const store: Store<State, Actions> = createStore(reducer, applyMiddleware(thunk))

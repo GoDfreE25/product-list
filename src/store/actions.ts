@@ -3,7 +3,7 @@ import {
   ActionType, AddProductAction,
 } from './types';
 
-export const addTodosActionCreator = (payload: Product[]): AddProductAction => ({
+export const addProductActionCreator = (payload: Product[]): AddProductAction => ({
   type: ActionType.AddProduct,
   payload,
 });

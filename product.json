@@ -2,7 +2,7 @@
   "product": [
     {
       "id": 1,
-      "imageUrl": "https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Fwww.verywellfit.com%2Fserving-sizes-for-18-fruits-and-vegetables-2506865&psig=AOvVaw1yc1e8wYmQyFuDzez4eQJX&ust=1651840478921000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCk_LqvyPcCFQAAAAAdAAAAABAD",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9hqyrmvD5IUZYLDp5nf5uHMSkzgQlYuiXWiH4Qd_g0wYC4jdSIj96imCWeh_WEbVKl0s&usqp=CAU",
       "name": "Banana",
       "count": 4,
       "size": {
@@ -17,7 +17,7 @@
     },
     {
       "id": 2,
-      "imageUrl": "https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Fen.wikibooks.org%2Fwiki%2FWikijunior%3AFruit_Alphabet%2FA&psig=AOvVaw1yc1e8wYmQyFuDzez4eQJX&ust=1651840478921000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCk_LqvyPcCFQAAAAAdAAAAABAI",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYnc4owRRH-m0i5-4t-xyiRMvzvhu-QAVF_g&usqp=CAU",
       "name": "Apple",
       "count": 7,
       "size": {
@@ -32,7 +32,7 @@
     },
     {
       "id": 3,
-      "imageUrl": "https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Fwww.nytimes.com%2F2018%2F05%2F22%2Fdining%2Fbest-summer-fruit.html&psig=AOvVaw1yc1e8wYmQyFuDzez4eQJX&ust=1651840478921000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCk_LqvyPcCFQAAAAAdAAAAABAU",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHX1RlroMAZdUeFKgGA9Tslk0YLjDEu-5VL62Uwtj_o2gohvBGc3rGYte6JMUIGD980ok&usqp=CAU",
       "name": "WaterMelon",
       "count": 10,
       "size": {
@@ -47,7 +47,7 @@
     },
     {
       "id": 4,
-      "imageUrl": "https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Ftime.com%2F4662293%2Fkiwifruit-chinese-gooseberry-new-zealand-history-fruit%2F&psig=AOvVaw1yc1e8wYmQyFuDzez4eQJX&ust=1651840478921000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCk_LqvyPcCFQAAAAAdAAAAABAh",
+      "imageUrl": "https://www.collinsdictionary.com/images/thumb/kiwifruit_245014345_250.jpg",
       "name": "Kiwi",
       "count": 17,
       "size": {
@@ -62,7 +62,7 @@
     },
     {
       "id": 5,
-      "imageUrl": "https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Fen.wikibooks.org%2Fwiki%2FWikijunior%3AFruit_Alphabet%2FA&psig=AOvVaw1yc1e8wYmQyFuDzez4eQJX&ust=1651840478921000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCk_LqvyPcCFQAAAAAdAAAAABAI",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYnc4owRRH-m0i5-4t-xyiRMvzvhu-QAVF_g&usqp=CAU",
       "name": "Apple",
       "count": 7,
       "size": {

@@ -1,0 +1,12 @@
+.ProductList__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+
+  list-style: none;
+}
+
+.ProductList__paragraph {
+  text-align: center;
+  font-size: large;
+}

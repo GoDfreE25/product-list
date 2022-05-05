@@ -2,14 +2,14 @@
   "product": [
     {
       "id": 1,
-      "imageUrl": "some url here",
-      "name": "Product name",
+      "imageUrl": "https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Fwww.verywellfit.com%2Fserving-sizes-for-18-fruits-and-vegetables-2506865&psig=AOvVaw1yc1e8wYmQyFuDzez4eQJX&ust=1651840478921000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCk_LqvyPcCFQAAAAAdAAAAABAD",
+      "name": "Banana",
       "count": 4,
       "size": {
         "width": 200,
         "height": 200
       },
-      "weight": "200g",
+      "weight": "600g",
       "comments": [
         "CommentModel",
         "CommentModel"
@@ -17,14 +17,59 @@
     },
     {
       "id": 2,
-      "imageUrl": "some url here",
-      "name": "Product name",
-      "count": 4,
+      "imageUrl": "https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Fen.wikibooks.org%2Fwiki%2FWikijunior%3AFruit_Alphabet%2FA&psig=AOvVaw1yc1e8wYmQyFuDzez4eQJX&ust=1651840478921000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCk_LqvyPcCFQAAAAAdAAAAABAI",
+      "name": "Apple",
+      "count": 7,
       "size": {
-        "width": 200,
+        "width": 150,
         "height": 200
       },
-      "weight": "200g",
+      "weight": "300g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Fwww.nytimes.com%2F2018%2F05%2F22%2Fdining%2Fbest-summer-fruit.html&psig=AOvVaw1yc1e8wYmQyFuDzez4eQJX&ust=1651840478921000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCk_LqvyPcCFQAAAAAdAAAAABAU",
+      "name": "WaterMelon",
+      "count": 10,
+      "size": {
+        "width": 250,
+        "height": 300
+      },
+      "weight": "900g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Ftime.com%2F4662293%2Fkiwifruit-chinese-gooseberry-new-zealand-history-fruit%2F&psig=AOvVaw1yc1e8wYmQyFuDzez4eQJX&ust=1651840478921000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCk_LqvyPcCFQAAAAAdAAAAABAh",
+      "name": "Kiwi",
+      "count": 17,
+      "size": {
+        "width": 50,
+        "height": 100
+      },
+      "weight": "400g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://www.google.com.ua/url?sa=i&url=https%3A%2F%2Fen.wikibooks.org%2Fwiki%2FWikijunior%3AFruit_Alphabet%2FA&psig=AOvVaw1yc1e8wYmQyFuDzez4eQJX&ust=1651840478921000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCk_LqvyPcCFQAAAAAdAAAAABAI",
+      "name": "Apple",
+      "count": 7,
+      "size": {
+        "width": 150,
+        "height": 200
+      },
+      "weight": "300g",
       "comments": [
         "CommentModel",
         "CommentModel"
@@ -33,9 +78,9 @@
   ],
   "comments": [
     {
-      "id": 3,
+      "id": 1,
       "productId": 1,
-      "description": "some text here",
+      "description": "Cool Apple",
       "date": "14:00 22.08.2021"
     }
   ]

@@ -16,21 +16,6 @@
       ]
     },
     {
-      "id": 2,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYnc4owRRH-m0i5-4t-xyiRMvzvhu-QAVF_g&usqp=CAU",
-      "name": "Apple",
-      "count": 7,
-      "size": {
-        "width": 150,
-        "height": 200
-      },
-      "weight": "300g",
-      "comments": [
-        "CommentModel",
-        "CommentModel"
-      ]
-    },
-    {
       "id": 3,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHX1RlroMAZdUeFKgGA9Tslk0YLjDEu-5VL62Uwtj_o2gohvBGc3rGYte6JMUIGD980ok&usqp=CAU",
       "name": "WaterMelon",

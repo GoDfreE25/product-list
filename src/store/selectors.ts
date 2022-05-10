@@ -1,4 +1,4 @@
 import { Product } from "../types";
 import { State } from "./types";
 
-export const getProductSelector = (state: State): Product[] => state.product;
+export const loadProductSelector = (state: State): Product[] => state.products;

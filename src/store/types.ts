@@ -2,7 +2,8 @@ import { Action as BaseAction } from 'redux';
 import { Product } from '../types';
 
 export interface State {
-  product: Product[],
+  products: Product[],
+  product: Product | {},
 }
 
 export interface Action<T, P> extends BaseAction<T> {
@@ -10,10 +11,14 @@ export interface Action<T, P> extends BaseAction<T> {
 }
 
 export enum ActionType {
-  AddProduct = 'AddProduct',
+  GetProduct = 'getProduct',
+  RemoveProduct = 'removeProduct',
+  AddProduct= 'addProducr'
 }
 
-export type AddProductAction = Action<ActionType.AddProduct, Product[]>;
+export type GetProductsAction = Action<ActionType.GetProduct, Product[]>;
+export type RemoveProductsAction = Action<ActionType.RemoveProduct, number>;
+export type AddProductsAction = Action<ActionType.AddProduct, Product>;
 
 
-export type Actions = AddProductAction;
+export type Actions = GetProductsAction | RemoveProductsAction | AddProductsAction;

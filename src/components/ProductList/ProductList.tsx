@@ -1,17 +1,25 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { getProducts } from "../../api/api";
-import { addProductActionCreator } from "../../store/actions";
-import { getProductSelector } from "../../store/selectors"
+import { removeProduct } from "../../api/product.api";
+import { removeProductById } from "../../store/actions";
+import { loadProductSelector } from "../../store/selectors";
 import './ProductList.css';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { ModalAdd } from "./ModalAdd/ModalAdd";
+
 
 export const ProductList: React.FC = () => {
-  const products = useSelector(getProductSelector);
+  const products = useSelector(loadProductSelector);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    getProducts().then((productFS) => dispatch(addProductActionCreator(productFS)));
-  }, [dispatch]);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
   const sortedProductByAlphabet = useMemo(() => {
     return products.sort((productA, productB) => (
@@ -19,14 +27,57 @@ export const ProductList: React.FC = () => {
     ));
   }, [products]);
 
+  const deleteProduct = async (productId: number) => {
+
+    if(window.confirm("Are you sure wanted to delete the product?")) {
+      await removeProduct(productId);
+      dispatch(removeProductById(productId));
+    } else {
+      return;
+    }
+  };
+
   return (
     <div className="ProductList">
+      <Button 
+        variant="contained"
+        type="button"
+        onClick={() => handleOpen()}
+      >
+        Add Product
+      </Button>
+      {open && 
+      <ModalAdd 
+        closeModal={setOpen}
+        open={open}
+      />}
       <div className="ProductList__list-container">
         <ul className="ProductList__list">
           {sortedProductByAlphabet.map(product => (
             <li key={product.id}>
-              <img src={product.imageUrl} alt={product.name} />
-              <p className="ProductList__paragraph">{product.name}</p>
+              <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        component="img"
+        alt={product.name}
+        height="150"
+        image={product.imageUrl}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {product.name}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button 
+          size="small"
+          type="button"
+          onClick={() => deleteProduct(product.id)}
+        >
+          Delete
+        </Button>
+        <Button size="small">Learn More</Button>
+      </CardActions>
+    </Card>
             </li>
           ))}
         </ul>

@@ -17,9 +17,6 @@ export const ProductList: React.FC = () => {
   const products = useSelector(loadProductSelector);
   const dispatch = useDispatch();
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
   const sortedProductByAlphabet = useMemo(() => {
     return products.sort((productA, productB) => (
@@ -42,7 +39,7 @@ export const ProductList: React.FC = () => {
       <Button 
         variant="contained"
         type="button"
-        onClick={() => handleOpen()}
+        onClick={() => setOpen(true)}
       >
         Add Product
       </Button>

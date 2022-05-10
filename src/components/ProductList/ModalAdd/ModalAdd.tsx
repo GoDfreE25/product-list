@@ -43,20 +43,6 @@ export const ModalAdd: React.FC<Props> = ({ closeModal, open }) => {
     dispatch(addProduct(product))
   }
 
-  console.log(addProductList({
-    id: Math.random(),
-    imageUrl,
-    name,
-    count,
-    weight,
-    size: {
-      width: sizeWidth,
-      height: sizeHeight,
-    },
-    comments: [],
-  }));
-  
-
   const sumbitChange = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     addProductList({
@@ -85,7 +71,6 @@ export const ModalAdd: React.FC<Props> = ({ closeModal, open }) => {
       aria-labelledby="parent-modal-title"
       aria-describedby="parent-modal-description"
     > */}
-      <div>
         <form onSubmit={sumbitChange}>
         {/* <Box sx={{ ...style, width: 300 }}
         component="form"
@@ -151,22 +136,18 @@ export const ModalAdd: React.FC<Props> = ({ closeModal, open }) => {
       style={{marginBottom: "10px"}}
       variant="contained"
       type="submit"
-      onClick={() => sumbitChange}
     >
       Added Product
     </Button>
     <Button
-      
       variant="contained"
       type="button"
       onClick={() => handleClose()}
     >
       Cancel
     </Button>
+    </form>
       {/* </Box> */}
-        </form>
-      
-      </div>
     {/* </Modal> */}
   </div>
   );

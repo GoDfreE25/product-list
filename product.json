@@ -59,6 +59,36 @@
         "CommentModel",
         "CommentModel"
       ]
+    },
+    {
+      "imageUrl": "https://www.collinsdictionary.com/images/thumb/kiwifruit_245014345_250.jpg",
+      "name": "Kiwi",
+      "count": 17,
+      "size": {
+        "width": 50,
+        "height": 100
+      },
+      "weight": "400g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ],
+      "id": 6
+    },
+    {
+      "imageUrl": "https://www.collinsdictionary.com/images/thumb/kiwifruit_245014345_250.jpg",
+      "name": "Kiwi",
+      "count": 17,
+      "size": {
+        "width": 50,
+        "height": 100
+      },
+      "weight": "400g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ],
+      "id": 7
     }
   ],
   "comments": [

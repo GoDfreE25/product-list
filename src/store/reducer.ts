@@ -4,6 +4,8 @@ import { State, Actions, ActionType } from "./types";
 const initialState: State = {
   products: [],
   product: {},
+  selectedProductID: 0,
+  selectedProduct: null,
 };
 
 export const rootReducer: Reducer<State, Actions> = (

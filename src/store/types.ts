@@ -4,6 +4,8 @@ import { Product } from '../types';
 export interface State {
   products: Product[],
   product: Product | {},
+  selectedProductID: number,
+  selectedProduct: Product | null,
 }
 
 export interface Action<T, P> extends BaseAction<T> {
@@ -13,12 +15,21 @@ export interface Action<T, P> extends BaseAction<T> {
 export enum ActionType {
   GetProduct = 'getProduct',
   RemoveProduct = 'removeProduct',
-  AddProduct= 'addProducr'
+  AddProduct = 'addProducr',
+  SelectProductId = 'selectedProductId',
+  SelectProduct = 'selectedProduct',
 }
 
 export type GetProductsAction = Action<ActionType.GetProduct, Product[]>;
 export type RemoveProductsAction = Action<ActionType.RemoveProduct, number>;
 export type AddProductsAction = Action<ActionType.AddProduct, Product>;
+export type SelectedProductIdAction = Action<ActionType.SelectProductId, number>;
+export type SelectedProductAction = Action<ActionType.SelectProduct, Product | null>;
 
 
-export type Actions = GetProductsAction | RemoveProductsAction | AddProductsAction;
+export type Actions = 
+GetProductsAction 
+| RemoveProductsAction 
+| AddProductsAction 
+| SelectedProductIdAction 
+| SelectedProductAction;

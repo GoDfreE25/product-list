@@ -80,6 +80,30 @@
         "height": 75
       },
       "comments": []
+    },
+    {
+      "id": 1652201691075,
+      "imageUrl": "https://www.collinsdictionary.com/images/thumb/kiwifruit_245014345_250.jpg",
+      "name": "Kiwi",
+      "count": 100,
+      "weight": "200g",
+      "size": {
+        "width": 120,
+        "height": 105
+      },
+      "comments": []
+    },
+    {
+      "id": 1652202564172,
+      "imageUrl": "https://dictionary.cambridge.org/ru/images/thumb/banana_noun_001_01109.jpg?version=5.0.239",
+      "name": "Banana",
+      "count": 150,
+      "weight": "1400g",
+      "size": {
+        "width": 140,
+        "height": 120
+      },
+      "comments": []
     }
   ],
   "comments": [

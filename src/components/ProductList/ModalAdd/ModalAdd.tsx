@@ -10,6 +10,7 @@ import { Product } from '../../../types';
 import { addedProduct } from '../../../api/product.api';
 import { addProduct } from '../../../store/actions';
 import { useDispatch } from 'react-redux';
+import { color } from '@mui/system';
 
 interface Props {
   closeModal: (name: boolean) => void;
@@ -24,26 +25,42 @@ export const ModalAdd: React.FC<Props> = ({ closeModal, open }) => {
   const [sizeWidth, setSizeWidth] = useState(0);
   const [sizeHeight, setSizeHeight] = useState(0);
   const [weight, setWeight] = useState('');
+  const [error, seetError] = useState('');
 
   const addProductList = async (product: Product) => {
     await addedProduct(product);
     dispatch(addProduct(product))
   }
 
+  const resetForm = () => {
+    setImageUrl('');
+    setName('');
+    setCount(0);
+    setSizeWidth(0);
+    setSizeHeight(0);
+    setWeight('');
+    seetError('');
+  }
+
   const sumbitChange = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    addProductList({
-      id: Math.trunc(Date.now()),
-      imageUrl,
-      name,
-      count,
-      weight,
-      size: {
-        width: sizeWidth,
-        height: sizeHeight,
-      },
-      comments: [],
-    })
+    if (!imageUrl || !name || !count || !weight || !sizeHeight || !setSizeHeight) {
+      seetError('Pleae input all input field');
+    } else {
+      addProductList({
+        id: Math.trunc(Date.now()),
+        imageUrl,
+        name,
+        count,
+        weight,
+        size: {
+          width: sizeWidth,
+          height: sizeHeight,
+        },
+        comments: [],
+      });
+      resetForm();
+    }
   }
 
   const handleClose = () => {
@@ -54,6 +71,7 @@ export const ModalAdd: React.FC<Props> = ({ closeModal, open }) => {
   <div>
   <Dialog open={open} onClose={handleClose}>
     <DialogTitle>Add Product</DialogTitle>
+    {error && <DialogTitle style={{color: "red"}}>{error}</DialogTitle>}
     <DialogContent>
     <DialogContentText>
       Here you can enter details to add the product.

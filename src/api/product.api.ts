@@ -18,3 +18,5 @@ export const addedProduct = (product: Product): Promise<Product> => get(`${ENDPO
   },
   body: JSON.stringify(product),
 });
+
+export const getProductById = (productId: number): Promise<Product> => get(`${ENDPOINTS.product}/${productId}`)

@@ -1,28 +1,15 @@
 import React, { useState } from 'react';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import { Product } from '../../../types';
 import { addedProduct } from '../../../api/product.api';
 import { addProduct } from '../../../store/actions';
 import { useDispatch } from 'react-redux';
-
-const style = {
-  display: 'flex',
-  flexDirection: 'column',
-  position: 'absolute' as 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 300,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  pt: 2,
-  px: 4,
-  pb: 3,
-};
 
 interface Props {
   closeModal: (name: boolean) => void;
@@ -46,7 +33,7 @@ export const ModalAdd: React.FC<Props> = ({ closeModal, open }) => {
   const sumbitChange = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     addProductList({
-      id: Math.random(),
+      id: Math.trunc(Date.now()),
       imageUrl,
       name,
       count,
@@ -65,90 +52,75 @@ export const ModalAdd: React.FC<Props> = ({ closeModal, open }) => {
 
   return (
   <div>
-    {/* <Modal
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="parent-modal-title"
-      aria-describedby="parent-modal-description"
-    > */}
-        <form onSubmit={sumbitChange}>
-        {/* <Box sx={{ ...style, width: 300 }}
-        component="form"
-        noValidate
-        autoComplete="off"
-      > */}
+  <Dialog open={open} onClose={handleClose}>
+    <DialogTitle>Add Product</DialogTitle>
+    <DialogContent>
+    <DialogContentText>
+      Here you can enter details to add the product.
+    </DialogContentText>
+      <form onSubmit={sumbitChange} id="myform">
+        <TextField 
+        id="outlined-basic" 
+        label="ImageUrl" 
+        variant="outlined" 
+        type="text" 
+        value={imageUrl}
+        onChange={(event) => setImageUrl(event.target.value)}
+        style={{margin: "10px"}}
+      />
       <TextField 
-      id="outlined-basic" 
-      label="ImageUrl" 
-      variant="outlined" 
-      type="text" 
-      value={imageUrl}
-      onChange={(event) => setImageUrl(event.target.value)}
-      style={{marginBottom: "10px"}}
-    />
-    <TextField 
-      id="outlined-basic" 
-      label="Name" 
-      variant="outlined" 
-      type="text"
-      name='name'
-      value={name}
-      onChange={(event) => setName(event.target.value)}
-      style={{marginBottom: "10px"}}
-    />
-    <TextField 
-      id="outlined-basic" 
-      label="Count" 
-      variant="outlined" 
-      type="text" 
-      value={count}
-      onChange={(event) => setCount(Number(event.target.value))}
-      style={{marginBottom: "10px"}}
-    />
-    <TextField 
-      id="outlined-basic" 
-      label="Size Width" 
-      variant="outlined" 
-      type="text" 
-      value={sizeWidth}
-      onChange={(event) => setSizeWidth(Number(event.target.value))}
-      style={{marginBottom: "10px"}}
-    />
-    <TextField 
-      id="outlined-basic" 
-      label="Size Heigt" 
-      variant="outlined" 
-      type="text" 
-      value={sizeHeight}
-      onChange={(event) => setSizeHeight(Number(event.target.value))}
-      style={{marginBottom: "10px"}}
-    />
-    <TextField 
-      id="outlined-basic" 
-      label="Weight" 
-      variant="outlined" 
-      type="text" 
-      value={weight}
-      onChange={(event) => setWeight(event.target.value)}
-      style={{marginBottom: "10px"}}
-    />
-    <Button
-      style={{marginBottom: "10px"}}
-      variant="contained"
-      type="submit"
-    >
-      Added Product
-    </Button>
-    <Button
-      variant="contained"
-      type="button"
-      onClick={() => handleClose()}
-    >
-      Cancel
-    </Button>
-    </form>
-      {/* </Box> */}
-    {/* </Modal> */}
+        id="outlined-basic" 
+        label="Name" 
+        variant="outlined" 
+        type="text"
+        name='name'
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+        style={{margin: "10px"}}
+      />
+      <TextField 
+        id="outlined-basic" 
+        label="Count" 
+        variant="outlined" 
+        type="text" 
+        value={count}
+        onChange={(event) => setCount(Number(event.target.value))}
+        style={{margin: "10px"}}
+      />
+      <TextField 
+        id="outlined-basic" 
+        label="Size Width" 
+        variant="outlined" 
+        type="text" 
+        value={sizeWidth}
+        onChange={(event) => setSizeWidth(Number(event.target.value))}
+        style={{margin: "10px"}}
+      />
+      <TextField 
+        id="outlined-basic" 
+        label="Size Heigt" 
+        variant="outlined" 
+        type="text" 
+        value={sizeHeight}
+        onChange={(event) => setSizeHeight(Number(event.target.value))}
+        style={{margin: "10px"}}
+      />
+      <TextField 
+        id="outlined-basic" 
+        label="Weight" 
+        variant="outlined" 
+        type="text" 
+        value={weight}
+        onChange={(event) => setWeight(event.target.value)}
+        style={{margin: "10px"}}
+      />
+  </form>
+  </DialogContent>
+    <DialogActions>
+      <Button type='submit' form="myform">Add Product</Button>
+      <Button onClick={handleClose}>Cancell</Button>
+    </DialogActions>
+  </Dialog>
   </div>
   );
 }

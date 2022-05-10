@@ -1,21 +1,6 @@
 {
   "product": [
     {
-      "id": 1,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9hqyrmvD5IUZYLDp5nf5uHMSkzgQlYuiXWiH4Qd_g0wYC4jdSIj96imCWeh_WEbVKl0s&usqp=CAU",
-      "name": "Banana",
-      "count": 4,
-      "size": {
-        "width": 200,
-        "height": 200
-      },
-      "weight": "600g",
-      "comments": [
-        "CommentModel",
-        "CommentModel"
-      ]
-    },
-    {
       "id": 3,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHX1RlroMAZdUeFKgGA9Tslk0YLjDEu-5VL62Uwtj_o2gohvBGc3rGYte6JMUIGD980ok&usqp=CAU",
       "name": "WaterMelon",
@@ -61,34 +46,40 @@
       ]
     },
     {
-      "imageUrl": "https://www.collinsdictionary.com/images/thumb/kiwifruit_245014345_250.jpg",
-      "name": "Kiwi",
-      "count": 17,
+      "id": 0.4381167202293961,
+      "imageUrl": "https://dictionary.cambridge.org/ru/images/thumb/banana_noun_001_01109.jpg?version=5.0.239",
+      "name": "Banana",
+      "count": 100,
+      "weight": "800g",
       "size": {
-        "width": 50,
-        "height": 100
+        "width": 100,
+        "height": 50
       },
-      "weight": "400g",
-      "comments": [
-        "CommentModel",
-        "CommentModel"
-      ],
-      "id": 6
+      "comments": []
     },
     {
+      "id": 1652190406332,
       "imageUrl": "https://www.collinsdictionary.com/images/thumb/kiwifruit_245014345_250.jpg",
       "name": "Kiwi",
-      "count": 17,
+      "count": 77,
+      "weight": "1399g",
       "size": {
-        "width": 50,
-        "height": 100
+        "width": 150,
+        "height": 110
       },
-      "weight": "400g",
-      "comments": [
-        "CommentModel",
-        "CommentModel"
-      ],
-      "id": 7
+      "comments": []
+    },
+    {
+      "id": 1652193399268,
+      "imageUrl": "https://dictionary.cambridge.org/ru/images/thumb/banana_noun_001_01109.jpg?version=5.0.239",
+      "name": "Banana",
+      "count": 152,
+      "weight": "250g",
+      "size": {
+        "width": 150,
+        "height": 75
+      },
+      "comments": []
     }
   ],
   "comments": [

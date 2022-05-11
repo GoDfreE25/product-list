@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import './ProductDetail.css';
 import { useDispatch, useSelector } from "react-redux";
 import { getProductById } from "../../api/product.api";
@@ -16,12 +16,14 @@ import WarehouseIcon from '@mui/icons-material/Warehouse';
 import HeightIcon from '@mui/icons-material/Height';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import ScaleIcon from '@mui/icons-material/Scale';
+import { ModalEdit } from "../ModalEdit/ModalEdit";
 
 
 export const ProductDetails: React.FC = React.memo(() => {
   const product = useSelector(getProductSelector);
   const productId = useSelector(getSelectedProductIdSelector);
   const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     getProductById(productId)
@@ -63,6 +65,19 @@ export const ProductDetails: React.FC = React.memo(() => {
       </CardContent>
     </CardActionArea>
   </Card>
+  <br/>
+  <Button 
+    variant="contained"
+    type="button"
+    onClick={() => setOpen(true)}
+  >
+    Edit Product
+  </Button>
+  {open && 
+  <ModalEdit 
+    closeModal={setOpen}
+    open={open}
+  />}
 </div>
   </div>
   );

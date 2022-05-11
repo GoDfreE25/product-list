@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { removeProduct } from "../../api/product.api";
 import { removeProductById, setSelectedProductById } from "../../store/actions";
@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 export const ProductList: React.FC = () => {
   const products = useSelector(loadProductSelector);
   const dispatch = useDispatch();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const sortedProductByAlphabet = useMemo(() => {
     return products.sort((productA, productB) => (

@@ -6,11 +6,10 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { Product } from '../../../types';
-import { addedProduct } from '../../../api/product.api';
-import { addProduct } from '../../../store/actions';
+import { Product } from '../../types';
+import { addedProduct } from '../../api/product.api';
+import { addProduct } from '../../store/actions';
 import { useDispatch } from 'react-redux';
-import { color } from '@mui/system';
 
 interface Props {
   closeModal: (name: boolean) => void;

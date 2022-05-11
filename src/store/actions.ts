@@ -3,7 +3,7 @@ import { getProduct } from '../api/product.api';
 import { Product } from '../types';
 import {
   Actions,
-  ActionType, AddProductsAction, GetProductsAction, RemoveProductsAction,
+  ActionType, AddProductsAction, GetProductsAction, RemoveProductsAction, SelectedProductAction, SelectedProductIdAction,
 } from './types';
 
 export const getProducts = (payload: Product[]): GetProductsAction => ({
@@ -26,5 +26,15 @@ export const removeProductById = (payload: number): RemoveProductsAction => ({
 
 export const addProduct = (payload: Product): AddProductsAction => ({
   type: ActionType.AddProduct,
+  payload,
+});
+
+export const setSelectedProductById = (payload: number): SelectedProductIdAction => ({
+  type: ActionType.SelectProductId,
+  payload,
+});
+
+export const selectProduct = (payload: Product | null): SelectedProductAction => ({
+  type: ActionType.SelectProduct,
   payload,
 });

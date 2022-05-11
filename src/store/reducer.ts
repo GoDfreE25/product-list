@@ -26,7 +26,17 @@ export const rootReducer: Reducer<State, Actions> = (
       return {
         ...state,
         products: [...state.products, action.payload],
-      }
+      };
+    case ActionType.SelectProductId:
+      return {
+        ...state,
+        selectedProductID: action.payload,
+      };
+    case ActionType.SelectProduct:
+      return {
+        ...state,
+        selectedProduct: action.payload,
+      };
 
     default:
       return state;

@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { removeProduct } from "../../api/product.api";
-import { removeProductById } from "../../store/actions";
+import { removeProductById, setSelectedProductById } from "../../store/actions";
 import { loadProductSelector } from "../../store/selectors";
 import './ProductList.css';
 import Card from '@mui/material/Card';
@@ -10,7 +10,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { ModalAdd } from "./ModalAdd/ModalAdd";
+import { ModalAdd } from "../ModalAdd/ModalAdd";
+import { Link } from "react-router-dom";
 
 
 export const ProductList: React.FC = () => {
@@ -72,7 +73,15 @@ export const ProductList: React.FC = () => {
         >
           Delete
         </Button>
-        <Button size="small">Learn More</Button>
+        <Link style={{textDecoration: "none"}} to="/producdetails">
+        <Button 
+          size="small"
+          onClick={() => {
+            dispatch(setSelectedProductById(product.id))
+          }}
+        >
+          Learn More</Button>
+        </Link>
       </CardActions>
     </Card>
             </li>

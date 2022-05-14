@@ -34,7 +34,7 @@
       "id": 5,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYnc4owRRH-m0i5-4t-xyiRMvzvhu-QAVF_g&usqp=CAU",
       "name": "Apple",
-      "count": 100,
+      "count": 90,
       "weight": "300g",
       "size": {
         "width": 150,
@@ -67,14 +67,14 @@
       "comments": []
     },
     {
-      "id": 1652202564172,
+      "id": 1652523879428,
       "imageUrl": "https://dictionary.cambridge.org/ru/images/thumb/banana_noun_001_01109.jpg?version=5.0.239",
       "name": "Banana",
-      "count": 150,
-      "weight": "1400g",
+      "count": 155,
+      "weight": "800g",
       "size": {
-        "width": 140,
-        "height": 120
+        "width": 50,
+        "height": 140
       },
       "comments": []
     }

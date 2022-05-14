@@ -19,4 +19,12 @@ export const addedProduct = (product: Product): Promise<Product> => get(`${ENDPO
   body: JSON.stringify(product),
 });
 
-export const getProductById = (productId: number): Promise<Product> => get(`${ENDPOINTS.product}/${productId}`)
+export const getProductById = (productId: number): Promise<Product> => get(`${ENDPOINTS.product}/${productId}`);
+
+export const editedProduct = (productId: number, product: Product): Promise<Product> => get(`${ENDPOINTS.product}/${productId}`, {
+  method: 'PUT',
+  headers: {
+    'Content-Type': 'application/json; charset=UTF-8'
+  },
+  body: JSON.stringify(product),
+});

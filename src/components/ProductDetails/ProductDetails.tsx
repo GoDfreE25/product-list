@@ -65,11 +65,11 @@ export const ProductDetails: React.FC = React.memo(() => {
       </CardContent>
     </CardActionArea>
   </Card>
-  <br/>
   <Button 
     variant="contained"
     type="button"
     onClick={() => setOpen(true)}
+    style={{marginTop: "15px"}}
   >
     Edit Product
   </Button>

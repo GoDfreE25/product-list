@@ -6,6 +6,7 @@ const initialState: State = {
   product: {},
   selectedProductID: 0,
   selectedProduct: null,
+  editProduct: {},
 };
 
 export const rootReducer: Reducer<State, Actions> = (
@@ -37,6 +38,11 @@ export const rootReducer: Reducer<State, Actions> = (
         ...state,
         selectedProduct: action.payload,
       };
+      case ActionType.EditProduct:
+        return {
+          ...state,
+          product: action.payload,
+        }
 
     default:
       return state;

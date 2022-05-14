@@ -16,7 +16,6 @@
       ]
     },
     {
-      "id": 4,
       "imageUrl": "https://www.collinsdictionary.com/images/thumb/kiwifruit_245014345_250.jpg",
       "name": "Kiwi",
       "count": 17,
@@ -28,22 +27,20 @@
       "comments": [
         "CommentModel",
         "CommentModel"
-      ]
+      ],
+      "id": 4
     },
     {
       "id": 5,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYnc4owRRH-m0i5-4t-xyiRMvzvhu-QAVF_g&usqp=CAU",
       "name": "Apple",
-      "count": 7,
+      "count": 100,
+      "weight": "300g",
       "size": {
         "width": 150,
         "height": 200
       },
-      "weight": "300g",
-      "comments": [
-        "CommentModel",
-        "CommentModel"
-      ]
+      "comments": []
     },
     {
       "id": 1652190406332,
@@ -80,14 +77,6 @@
         "height": 120
       },
       "comments": []
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "productId": 1,
-      "description": "Cool Apple",
-      "date": "14:00 22.08.2021"
     }
   ]
 }

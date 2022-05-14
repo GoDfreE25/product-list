@@ -4,10 +4,12 @@ import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductSelector } from '../../store/selectors';
+import { getProductSelector, getSelectedProductIdSelector } from '../../store/selectors';
+import { editedProduct } from '../../api/product.api';
+import { Product } from '../../types';
+import { editProduct } from '../../store/actions';
 
 interface Props {
   closeModal: (name: boolean) => void;
@@ -17,13 +19,18 @@ interface Props {
 export const ModalEdit: React.FC<Props> = ({ closeModal, open }) => {
   const dispatch = useDispatch();
   const product = useSelector(getProductSelector);
+  const productID = useSelector(getSelectedProductIdSelector);
   const [imageUrl, setImageUrl] = useState(`${product?.imageUrl}`);
   const [name, setName] = useState(`${product?.name}`);
   const [count, setCount] = useState(`${Number(product?.count)}`);
   const [sizeWidth, setSizeWidth] = useState(`${Number(product?.size.width)}`);
   const [sizeHeight, setSizeHeight] = useState(`${Number(product?.size.height)}`);
   const [weight, setWeight] = useState(`${product?.weight}`);
-  const [error, seetError] = useState('');
+
+  const renameProduct = async (productId: number, product: Product) => {
+    await editedProduct(productId, product);
+    dispatch(editProduct(product))
+  }
 
   const resetForm = () => {
     setImageUrl('');
@@ -32,16 +39,24 @@ export const ModalEdit: React.FC<Props> = ({ closeModal, open }) => {
     setSizeWidth('0');
     setSizeHeight('0');
     setWeight('');
-    seetError('');
   }
 
   const sumbitChange = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!imageUrl || !name || !count || !weight || !sizeHeight || !setSizeHeight) {
-      seetError('Pleae input all input field');
-    }
-  };
-  
+    renameProduct(productID, {
+      id: Math.trunc(Date.now()),
+      imageUrl,
+      name,
+      count: Number(count),
+      weight,
+      size: {
+        width: Number(sizeWidth),
+        height: Number(sizeHeight),
+      },
+      comments: [],
+    });
+    resetForm();
+  }
   const handleClose = () => {
     closeModal(false);
   };
@@ -49,12 +64,8 @@ export const ModalEdit: React.FC<Props> = ({ closeModal, open }) => {
   return (
   <div>
   <Dialog open={open} onClose={handleClose}>
-    <DialogTitle>Add Product</DialogTitle>
-    {error && <DialogTitle style={{color: "red"}}>{error}</DialogTitle>}
+    <DialogTitle>Edit Product</DialogTitle>
     <DialogContent>
-    <DialogContentText>
-      Here you can enter details to add the product.
-    </DialogContentText>
       <form onSubmit={sumbitChange} id="myform">
         <TextField 
         id="outlined-basic" 
@@ -114,7 +125,7 @@ export const ModalEdit: React.FC<Props> = ({ closeModal, open }) => {
   </form>
   </DialogContent>
     <DialogActions>
-      <Button type='submit' form="myform">Add Product</Button>
+      <Button type='submit' form="myform">Update Product</Button>
       <Button onClick={handleClose}>Cancell</Button>
     </DialogActions>
   </Dialog>
